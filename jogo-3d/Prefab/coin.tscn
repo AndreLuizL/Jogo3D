@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://daeygiccpu3ks"]
+
+[ext_resource type="PackedScene" uid="uid://b4v3ysfo1h3jy" path="res://Assets/cenario/coin-gold.glb" id="1_exfwu"]
+[ext_resource type="Script" path="res://Scripts/coin.gd" id="1_j2uva"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5t3s5"]
+height = 0.3
+radius = 0.203174
+
+[node name="coin" type="Area3D"]
+script = ExtResource("1_j2uva")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.81665e-08, -1.00353, 0, 0.644374, -4.38657e-08, 0, 0.199919, 0)
+shape = SubResource("CylinderShape3D_5t3s5")
+
+[node name="coin" parent="." instance=ExtResource("1_exfwu")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
