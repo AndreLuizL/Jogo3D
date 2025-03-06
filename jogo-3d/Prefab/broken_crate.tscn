@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=3 uid="uid://5k4q3b2f2x86"]
+
+[ext_resource type="ArrayMesh" uid="uid://cmxf4bppbbuf3" path="res://Assets/cenario/crate/break_pieces.obj" id="1_8hdv2"]
+[ext_resource type="Script" path="res://Scripts/broken_crate.gd" id="1_32666"]
+[ext_resource type="Material" uid="uid://bwswvrsviiitw" path="res://Assets/cenario/crate/light_wood.tres" id="2_xa5st"]
+[ext_resource type="Material" uid="uid://dpfl6e3ivjnqf" path="res://Assets/cenario/crate/dark_wood.tres" id="3_tbovx"]
+[ext_resource type="ArrayMesh" uid="uid://68pbraju6q62" path="res://Assets/cenario/crate/break_pieces02.obj" id="4_nj6cb"]
+[ext_resource type="ArrayMesh" uid="uid://b3rm12kmexhlw" path="res://Assets/cenario/crate/break_pieces03.obj" id="5_yy3ol"]
+[ext_resource type="ArrayMesh" uid="uid://chjf62v6f8o2e" path="res://Assets/cenario/crate/break_pieces04.obj" id="6_wwaus"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vix8g"]
+points = PackedVector3Array(-0.25, -0.239941, 0.0355007, -0.170633, -0.239941, 0.0355007, -0.25, -0.239941, 0.25, -0.25, -0.175581, 0.0272276, -0.225003, -0.0480361, 0.00598385, -0.0199422, -0.21498, 0.0328909, -0.0220252, -0.239941, 0.17061, -0.200007, -0.0480361, 0.00598385, -0.0220252, -0.239941, 0.25, -0.25, 0.260059, 0.25, -0.25, 0.245034, -0.016617, 0.017289, 0.220024, -0.0140333, 0.0168671, 0.0910105, 0.199996, -0.170633, 0.245034, -0.016617, 0.0168671, 0.0910105, 0.224998, -0.0154333, -0.175581, 0.25, 0.019372, 0.260059, 0.25, -0.25, 0.260059, -0.016617, 0.017289, 0.235049, -0.0140333, 0.019372, 0.245034, 0.17061, -0.170633, 0.260059, -0.016617, 0.019372, 0.245034, 0.25, 0.019372, 0.260059, 0.17061)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_oth5m"]
+points = PackedVector3Array(-0.0922474, 0.233218, 0.02813, 0.0173007, 0.218193, 0.0175123, 0.0173007, 0.233218, 0.0175123, -0.17062, 0.258228, 0.0205615, -0.25, 0.258228, 0.0205615, -0.25, 0.243203, 0.0205615, -0.225, 0.0835021, 0.0111961, -0.2, 0.0835021, 0.0111961, -0.037487, -0.216811, -0.0266194, 0.02791, 0.233218, -0.0920137, -0.0199408, -0.216811, -0.0372371, -0.00933146, -0.216811, -0.0547972, -0.007264, -0.191801, -0.056839, 0.0193681, 0.258228, -0.170639, -0.25, 0.258228, -0.25, -0.25, -0.177412, -0.0306214, -0.25, -0.241772, -0.0402863, -0.17062, -0.241772, -0.0402863, 0.0193681, 0.243203, -0.25, 0.0193681, 0.258228, -0.25, 0.00285566, -0.0587747, -0.225008, -0.0220083, -0.241772, -0.170639, -0.0220083, -0.241772, -0.25, -0.25, -0.241772, -0.25, -0.0154522, -0.177412, -0.25)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_frcpe"]
+points = PackedVector3Array(0.254, -0.228628, 0.037706, 0.228973, -0.0918812, 0.0329269, 0.174602, -0.228628, 0.037706, 0.254, -0.243604, 0.037706, 0.254, 0.191987, -0.00807688, 0.203974, -0.0918812, 0.0329269, 0.254, 0.256396, -0.0167301, -0.0254739, -0.203618, 0.034963, 0.174602, -0.243604, 0.037706, 0.254, -0.243604, -0.251187, 0.174602, 0.256396, -0.0167301, 0.00164293, 0.231386, -0.0140153, 0.254, 0.256396, -0.251187, -0.0167558, 0.0912139, -0.201191, -0.026959, -0.228628, -0.171809, -0.0254739, -0.218643, 0.034963, -0.026959, -0.243604, -0.171809, -0.026959, -0.243604, -0.251187, 0.00315554, 0.256396, -0.171809, 0.00315554, 0.256396, -0.251187, -0.0167558, 0.0912139, -0.226189, -0.026959, -0.228628, -0.251187, -0.00162979, 0.191987, -0.251187)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a2vkt"]
+points = PackedVector3Array(-0.036058, -0.216235, 0.102947, -0.0357457, -0.210754, 0.102615, 0.00164727, 0.233794, 0.00345483, -0.0254676, -0.20121, 0.0577056, -0.0254676, -0.216235, 0.0577056, -0.0269724, -0.241196, 0.169413, -0.0269724, -0.241196, 0.248813, -0.0289883, -0.0882986, 0.223802, -0.0289883, -0.0882986, 0.198791, -0.00894314, 0.233794, 0.0758352, 0.00315207, 0.258804, 0.169413, 0.0148498, 0.233794, -0.0229382, 0.00164727, 0.218769, 0.00345483, 0.0148498, 0.218769, -0.0229382, -0.0166375, -0.216235, 0.0400734, 0.174615, -0.241196, 0.0435556, 0.254, -0.241196, 0.248813, -0.0269724, -0.22622, 0.248813, -0.00161787, 0.194395, 0.248813, 0.00315207, 0.258804, 0.248813, 0.174615, 0.258804, -0.0264204, 0.100425, 0.233794, -0.033523, 0.0995447, 0.227481, -0.0326663, 0.0409141, -0.191225, 0.0259511, 0.0374219, -0.216235, 0.0294609, 0.254, -0.241196, 0.0435556, 0.254, 0.258804, 0.248813, 0.254, 0.258804, -0.0264204, 0.254, 0.243779, -0.0264204, 0.228986, 0.0859869, -0.0143432, 0.203972, 0.0859869, -0.0143432, 0.254, -0.176836, 0.0324457)
+
+[node name="broken_crate" type="RigidBody3D"]
+collision_layer = 3
+collision_mask = 3
+can_sleep = false
+script = ExtResource("1_32666")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+sleeping = true
+freeze = true
+
+[node name="BreakPieces" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("1_8hdv2")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_xa5st")
+surface_material_override/1 = ExtResource("3_tbovx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_vix8g")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+sleeping = true
+freeze = true
+
+[node name="BreakPieces02" type="MeshInstance3D" parent="RigidBody3D2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("4_nj6cb")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_xa5st")
+surface_material_override/1 = ExtResource("3_tbovx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_oth5m")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+sleeping = true
+freeze = true
+
+[node name="BreakPieces03" type="MeshInstance3D" parent="RigidBody3D3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("5_yy3ol")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_xa5st")
+surface_material_override/1 = ExtResource("3_tbovx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_frcpe")
+
+[node name="RigidBody3D4" type="RigidBody3D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+sleeping = true
+freeze = true
+
+[node name="BreakPieces04" type="MeshInstance3D" parent="RigidBody3D4"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("6_wwaus")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_xa5st")
+surface_material_override/1 = ExtResource("3_tbovx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_a2vkt")
+
+[node name="stop_move" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="stop_move" to="." method="_on_stop_move_timeout"]

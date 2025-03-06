@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://dj24truaeirtg"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_8ixjv"]
+[ext_resource type="Shader" path="res://shader.gdshader" id="1_j4vqh"]
+[ext_resource type="FontFile" uid="uid://bj17n4jh4r0sg" path="res://Fonts/EquipmentPro.otf" id="2_egqgl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8qi6f"]
+shader = ExtResource("1_j4vqh")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62qca"]
+bg_color = Color(0.0596518, 0.484776, 0.636819, 1)
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73hhf"]
+bg_color = Color(0.0596518, 0.484776, 0.636819, 1)
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_weoqf"]
+bg_color = Color(0.123053, 0.654473, 0.850988, 1)
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dplpm"]
+bg_color = Color(0.0596518, 0.484776, 0.636819, 1)
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[sub_resource type="Theme" id="Theme_no1hl"]
+default_font = ExtResource("2_egqgl")
+default_font_size = 48
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_62qca")
+Button/styles/hover = SubResource("StyleBoxFlat_73hhf")
+Button/styles/normal = SubResource("StyleBoxFlat_weoqf")
+Button/styles/pressed = SubResource("StyleBoxFlat_dplpm")
+
+[node name="GameOver" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_8ixjv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_8qi6f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu_game_over" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -50.0
+offset_right = 166.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_no1hl")
+
+[node name="retry_btn" type="Button" parent="menu_game_over"]
+layout_mode = 2
+text = "TENTAR NOVAMENTE"
+
+[node name="quit_btn" type="Button" parent="menu_game_over"]
+layout_mode = 2
+text = "SAIR"
+
+[connection signal="pressed" from="menu_game_over/retry_btn" to="." method="_on_retry_btn_pressed"]
+[connection signal="pressed" from="menu_game_over/quit_btn" to="." method="_on_quit_btn_pressed"]

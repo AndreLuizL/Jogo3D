@@ -1,0 +1,280 @@
+[gd_scene load_steps=19 format=3 uid="uid://dnanb67tj5fwy"]
+
+[ext_resource type="Texture2D" uid="uid://biug3fcrjb35w" path="res://Assets/menu/gobot_icon.png" id="1_adbon"]
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_tny12"]
+[ext_resource type="Shader" uid="uid://dwshe3q3hvat6" path="res://moving_bg.tres" id="2_b2vvl"]
+[ext_resource type="Texture2D" uid="uid://dig4upgjpc5yo" path="res://Assets/menu/slice_title.png" id="2_fsmgl"]
+[ext_resource type="PackedScene" uid="uid://c2e6p8xlsgtp0" path="res://Cenas/world.tscn" id="2_ohrtv"]
+[ext_resource type="FontFile" uid="uid://bj17n4jh4r0sg" path="res://Fonts/EquipmentPro.otf" id="3_ds5kr"]
+[ext_resource type="Texture2D" uid="uid://bshpxiytau763" path="res://Assets/menu/select_indicator.png" id="4_pvmuq"]
+[ext_resource type="Texture2D" uid="uid://dwp5vpl5rqsos" path="res://Assets/menu/gobot.png" id="5_d2v1t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nktj1"]
+shader = ExtResource("2_b2vvl")
+shader_parameter/speed = Vector2(0.2, 0.2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r6mep"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ho7wr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_snrax"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m2fwb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rovcg"]
+
+[sub_resource type="Theme" id="Theme_501gt"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(0.995865, 0.843442, 3.85046e-07, 1)
+Button/colors/font_hover_color = Color(0.995865, 0.843442, 3.85046e-07, 1)
+Button/colors/font_hover_pressed_color = Color(0.995865, 0.843442, 3.85046e-07, 1)
+Button/colors/font_outline_color = Color(0.027451, 0.392157, 0.8, 1)
+Button/colors/font_pressed_color = Color(0.995865, 0.843442, 3.85046e-07, 1)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/constants/outline_size = 20
+Button/font_sizes/font_size = 90
+Button/fonts/font = ExtResource("3_ds5kr")
+Button/styles/disabled = SubResource("StyleBoxEmpty_r6mep")
+Button/styles/focus = SubResource("StyleBoxEmpty_ho7wr")
+Button/styles/hover = SubResource("StyleBoxEmpty_snrax")
+Button/styles/normal = SubResource("StyleBoxEmpty_m2fwb")
+Button/styles/pressed = SubResource("StyleBoxEmpty_rovcg")
+
+[sub_resource type="Animation" id="Animation_0ud4k"]
+resource_name = "intro"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("slice:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(560, 0), Vector2(-227, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/gobot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/start_btn:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/instrucoes_btn:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/sair_btn:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ukr6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("slice:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(560, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/gobot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/start_btn:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/instrucoes_btn:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/HBoxContainer/VBoxContainer/sair_btn:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ht8s"]
+_data = {
+"RESET": SubResource("Animation_8ukr6"),
+"intro": SubResource("Animation_0ud4k")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tny12")
+game_scene = ExtResource("2_ohrtv")
+
+[node name="color_bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.447059, 0.729412, 0.909804, 1)
+
+[node name="gobot_bg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.588235)
+material = SubResource("ShaderMaterial_nktj1")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_adbon")
+stretch_mode = 1
+
+[node name="slice" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 245.2
+offset_right = 472.2
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fsmgl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = -10
+theme_override_constants/margin_bottom = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = SubResource("Theme_501gt")
+text = "COMEÇAR"
+icon = ExtResource("4_pvmuq")
+alignment = 0
+
+[node name="instrucoes_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = SubResource("Theme_501gt")
+text = "CONTROLES"
+icon = ExtResource("4_pvmuq")
+alignment = 0
+
+[node name="sair_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme = SubResource("Theme_501gt")
+text = "SAIR"
+icon = ExtResource("4_pvmuq")
+alignment = 0
+
+[node name="gobot" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+texture = ExtResource("5_d2v1t")
+expand_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6ht8s")
+}
+autoplay = "intro"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/instrucoes_btn" to="." method="_on_instrucoes_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/sair_btn" to="." method="_on_sair_btn_pressed"]

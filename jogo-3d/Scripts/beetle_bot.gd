@@ -9,8 +9,15 @@ const ATTACK_RANGE:= 1.2
 @onready var nav_agent: NavigationAgent3D = $nav_agent
 @onready var animation_tree: AnimationTree = $beetle_bot_skin/AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
+@onready var som_morte: AudioStreamPlayer = $Poof2
+
+var is_dead:= false
 
 func _process(delta):
+	
+	if is_dead:
+		return
+		
 	velocity = Vector3.ZERO
 	
 	match state_machine.get_current_node():
@@ -29,6 +36,7 @@ func _process(delta):
 	animation_tree.set("parameters/conditions/walk", chase_player())
 	animation_tree.set("parameters/conditions/idle", not chase_player())
 	animation_tree.set("parameters/conditions/attack", attack_player())
+	animation_tree.set("parameters/conditions/dead", is_dead)
 		
 	move_and_slide()
 	
@@ -37,3 +45,16 @@ func chase_player():
 	
 func attack_player():
 	return global_position.distance_to(target.global_position) < ATTACK_RANGE
+
+
+func _on_hurtbox_body_entered(body):
+	if body.name == "gobot":
+		if not is_dead:
+			body.gravity = -body.JUMP_VELOCITY
+		is_dead = true
+		som_morte.play()
+		
+		$collision_body.set_deferred("disabled", true)
+		state_machine.travel("dead")
+		await animation_tree.animation_finished
+		queue_free()

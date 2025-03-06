@@ -2,8 +2,8 @@ extends Area3D
 
 const ROTATION_SPEED:= 50.0
 
-var start_pos:= position.y
-var end_pos:= position.y + 0.5
+@onready var start_pos:= position.y
+@onready var end_pos:= position.y + 0.5
 
 func _ready() -> void:
 	var coin_tween:= create_tween().set_loops().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
@@ -19,4 +19,4 @@ func _on_body_entered(body: Node3D) -> void:
 	if body.name == "gobot":
 		if body.has_method("collect_coins"):
 			body.collect_coins()
-		queue_free()
+			queue_free()

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3rm12kmexhlw"
+path="res://.godot/imported/break_pieces03.obj-78f60b4b0a19640121830ecdd552c854.mesh"
+
+[deps]
+
+files=["res://.godot/imported/break_pieces03.obj-78f60b4b0a19640121830ecdd552c854.mesh"]
+
+source_file="res://Assets/cenario/crate/break_pieces03.obj"
+dest_files=["res://.godot/imported/break_pieces03.obj-78f60b4b0a19640121830ecdd552c854.mesh", "res://.godot/imported/break_pieces03.obj-78f60b4b0a19640121830ecdd552c854.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
